@@ -10,8 +10,8 @@ def pascal_triangle(n):
 
     Args:
         n: integer
-    
-    Return: 
+
+    Return:
         Empty list if n <= 0 else list of lists of integers.
     """
     if n < 1:
