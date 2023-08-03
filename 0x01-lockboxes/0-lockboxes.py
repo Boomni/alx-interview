@@ -20,8 +20,10 @@ def canUnlockAll(boxes):
 
     unlocked = [0]  # tracks box with keys that can unlock a box
 
+    # extract box number & box from boxes
     for box_number, box in enumerate(boxes):
         for key in box:
+            # check if the key can unlock a box and add it to the unlocked list
             if key < len(boxes) and key not in unlocked and key != box_number:
                 unlocked.append(key)
             if len(unlocked) == len(boxes):
