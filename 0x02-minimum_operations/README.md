@@ -41,7 +41,7 @@ Example
 
 Given n = 12, the script will output:
 
-Min # of operations to reach 12 char: 7
+Min number of operations to reach 12 char: 7
 
 ### Author
 > Jonathan Boomni
