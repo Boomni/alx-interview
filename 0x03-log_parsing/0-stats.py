@@ -26,20 +26,19 @@ Script that reads stdin line by line and computes metrics:
 
 import sys
 
-
 stats: dict = {
     '200': 0, '301': 0, '400': 0, '401': 0,
     '403': 0, '404': 0, '405': 0, '500': 0
 }
-total: int = 0
+total_size: int = 0
 count: int = 0
 
 
-def print_stats(stats: dict, total: int) -> None:
+def print_stats(stats: dict, total_size: int) -> None:
     """
     print_stats function
     """
-    print("File size: {}".format(total))
+    print("File size: {}".format(total_size))
     for key, value in sorted(stats.items()):
         if value != 0:
             print("{}: {}".format(key, value))
@@ -53,13 +52,13 @@ if __name__ == "__main__":
                 status = data[-2]
                 if status in stats.keys():
                     stats[status] += 1
-                total += int(data[-1])
+                total_size += int(data[-1])
                 count += 1
             if count == 10:
                 count = 0
-                print_stats(stats, total)
+                print_stats(stats, total_size)
     except Exception:
         pass
     finally:
-        print_stats(stats, total)
+        print_stats(stats, total_size)
 
