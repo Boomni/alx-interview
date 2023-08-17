@@ -49,7 +49,7 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             data = line.split()
-            if len(data) > 4:
+            if len(data) < 10:
                 status = data[-2]
                 if status in stats.keys():
                     stats[status] += 1
@@ -62,3 +62,4 @@ if __name__ == "__main__":
         pass
     finally:
         print_stats(stats, total)
+
